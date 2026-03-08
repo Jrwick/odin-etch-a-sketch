@@ -2,6 +2,29 @@ html {
   background-color: rgb(186, 224, 184);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   color: rgb(173, 112, 76);
+}
+
+.container {
+  display: flex;
+  width: 50%;
+}
+
+.column {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.node {
+  border: solid black 1px;
+  flex: 1;
+  aspect-ratio: 1/1;
 }
