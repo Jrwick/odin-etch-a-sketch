@@ -7,7 +7,7 @@ function removeNodes() {
   });
 }
 
-function turnOnEtch() {
+function turnOnBasicEtch() {
   const nodes = document.querySelectorAll(".node");
   nodes.forEach((element) => {
     element.addEventListener("mouseover", () => {
@@ -28,7 +28,8 @@ function buildGrid(numOfRows) {
     }
     container.appendChild(col);
   }
-  turnOnEtch();
+  turnOnRandomEtch();
+  //turnOnEtch();
 }
 
 const gridSizeBtn = document.querySelector("#grid-size");
@@ -54,6 +55,25 @@ borderBtn.addEventListener("click", () => {
     node.classList.toggle("node-border");
   });
 });
+
+//Makes nodes random colors when turned on
+function turnOnRandomEtch() {
+  const nodes = document.querySelectorAll(".node");
+  nodes.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      const redValue = Math.floor(Math.random() * 256);
+      const greenValue = Math.floor(Math.random() * 256);
+      const blueValue = Math.floor(Math.random() * 256);
+      element.style.background = `rgb(${redValue} ${greenValue} ${blueValue})`;
+    });
+  });
+}
+
+function generateRGB() {
+  const redValue = Math.floor(Math.random() * 256);
+  const greenValue = Math.floor(Math.random() * 256);
+  const blueValue = Math.floor(Math.random() * 256);
+}
 
 //Build an initial 8 x 8 grid
 buildGrid(8);
