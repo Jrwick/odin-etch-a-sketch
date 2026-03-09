@@ -36,9 +36,11 @@ gridSizeBtn.addEventListener("click", () => {
   let inRange = false;
   while (!inRange) {
     let numOfRows = prompt("What size grid do you want? (1 - 100)");
-    if (numOfRows > 0 && numOfRows < 100) {
+    if (numOfRows > 0 && numOfRows <= 100) {
       buildGrid(numOfRows);
       inRange = true;
+    } else if (numOfRows == null) {
+      return;
     } else {
       alert("Invalid input, please enter a number between 1 and 100");
     }
