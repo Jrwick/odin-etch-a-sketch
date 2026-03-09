@@ -10,3 +10,10 @@ for (let i = 0; i < numOfRows; i++) {
   }
   container.appendChild(col);
 }
+
+const nodes = document.querySelectorAll(".node");
+nodes.forEach((element) => {
+  element.addEventListener("mouseover", () => {
+    element.classList.add("selected");
+  });
+});

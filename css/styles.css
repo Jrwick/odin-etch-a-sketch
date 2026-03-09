@@ -28,3 +28,7 @@ h1 {
   flex: 1;
   aspect-ratio: 1/1;
 }
+
+.selected {
+  background-color: rgb(174, 56, 1);
+}
