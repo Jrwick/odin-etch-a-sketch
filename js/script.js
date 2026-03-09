@@ -47,5 +47,13 @@ gridSizeBtn.addEventListener("click", () => {
   }
 });
 
+const borderBtn = document.querySelector("#border-toggle");
+borderBtn.addEventListener("click", () => {
+  const nodes = document.querySelectorAll(".node");
+  nodes.forEach((node) => {
+    node.classList.toggle("node-border");
+  });
+});
+
 //Build an initial 8 x 8 grid
 buildGrid(8);

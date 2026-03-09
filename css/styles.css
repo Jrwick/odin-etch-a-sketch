@@ -24,10 +24,13 @@ h1 {
 }
 
 .node {
-  border: solid black 1px;
   flex: 1;
   aspect-ratio: 1/1;
   background-color: #cbc9c9;
+}
+
+.node-border {
+  border: black 1px solid;
 }
 
 .selected {
