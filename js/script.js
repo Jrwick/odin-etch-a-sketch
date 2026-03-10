@@ -60,13 +60,29 @@ borderBtn.addEventListener("click", () => {
 function turnOnRandomEtch() {
   const nodes = document.querySelectorAll(".node");
   nodes.forEach((element) => {
-    element.addEventListener("mouseover", () => {
-      const redValue = Math.floor(Math.random() * 256);
-      const greenValue = Math.floor(Math.random() * 256);
-      const blueValue = Math.floor(Math.random() * 256);
-      element.style.background = `rgb(${redValue} ${greenValue} ${blueValue})`;
-    });
+    element.addEventListener("mouseover", randomEtchHandler);
   });
+  nodes.forEach((element) => {
+    element.addEventListener("mouseover", increaseOpacity);
+  });
+}
+
+function randomEtchHandler(e) {
+  {
+    const redValue = Math.floor(Math.random() * 256);
+    const greenValue = Math.floor(Math.random() * 256);
+    const blueValue = Math.floor(Math.random() * 256);
+    e.target.style.background = `rgb(${redValue} ${greenValue} ${blueValue})`;
+    e.target.style.opacity = 0.1;
+    e.target.removeEventListener("mouseover", randomEtchHandler);
+  }
+}
+
+function increaseOpacity(e) {
+  e.target.style.opacity = Number(e.target.style.opacity) + 0.1;
+  if (e.target.style.opacity >= 1) {
+    e.target.removeEventListener("mouseover", increaseOpacity);
+  }
 }
 
 function generateRGB() {
